@@ -34,10 +34,32 @@ start.addEventListener('click', function () {
 
     time.innerText = seconds;
 
-    let clock = setInterval(function (){
+    let countdown = setInterval(function (){
 
         time.innerText = seconds;
-        
-    })
 
+        if (seconds === 0) {
+
+            time.classList.add('hide');
+            numsAppear.classList.add('hide');
+            clearInterval(countdown);
+
+            setTimeout(function () {
+                alert('Tempo scaduto! È il momento di ricordare');
+                for (let i = 0; i < 5; i++) {
+                    let userNums = prompt('Inserisci un numero che ricordi')
+                    console.log(userNums);
+                    if (simonSays.includes(parseInt(userNums))) {
+                        numsCorrect.push(userNums)
+                        console.log(numsCorrect);
+                        score++;
+                        console.log(score);
+                    }
+                }
+                alert(`Hai indovinato ${score} numeri, quelli che hai indovinato sono: ${numsCorrect.join(', ')}`);
+            }, 2000)
+        }else {
+            seconds--;
+        }
+    }, 1000);
 })
