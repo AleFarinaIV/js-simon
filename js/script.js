@@ -28,7 +28,7 @@ start.addEventListener('click', function () {
 
     numsAppear.append(simonSays.join(' '));
 
-    let seconds = 30
+    let seconds = 30;
 
     let time = document.getElementById('seconds');
 
@@ -56,7 +56,7 @@ start.addEventListener('click', function () {
                         console.log(score);
                     }
                 }
-                alert(`Hai indovinato ${score} numeri, quelli che hai indovinato sono: ${numsCorrect.join(', ')}`);
+                document.getElementById('response').innerText = `Hai indovinato ${score} numeri, quelli che hai indovinato sono: ${numsCorrect.join(', ')}`;
             }, 2000)
         }else {
             seconds--;
