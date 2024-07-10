@@ -28,4 +28,16 @@ start.addEventListener('click', function () {
 
     numsAppear.append(simonSays.join(' '));
 
+    let seconds = 30
+
+    let time = document.getElementById('seconds');
+
+    time.innerText = seconds;
+
+    let clock = setInterval(function (){
+
+        time.innerText = seconds;
+        
+    })
+
 })
